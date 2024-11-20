@@ -1,0 +1,183 @@
+       __       __                 _                 
+  ____/ /___   / /_   ___  ____   (_)__  __ ____ ___ 
+ / __  // _ \ / __ \ / _ \/_  /  / // / / // __ `__ \
+/ /_/ //  __// /_/ //  __/ / /_ / // /_/ // / / / / /
+\__,_/ \___//_.___/ \___/ /___//_/ \__,_//_/ /_/ /_/ 
+                                                     
+
+
+                             Powered by Quarkus 3.8.5
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) ---------------------------------------------------------------------
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) Legacy REST API date formats enabled (this is currently the default).
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) For maximum compatibility and to ease upgrades from older versions
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) of Registry, the date format used in the REST API is not compliant
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) with OpenAPI standards (due to a bug in older versions).  Please
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) make sure you upgrade all of your client applications to use the
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) latest client version.  The next release will fix the date format
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) bug, which will result in older clients no longer being compatible
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) with the REST API.
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) If you would like to fix the date format bug in THIS version of
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) Registry (great!) please set the following ENV variable + value:
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) REGISTRY_APIS_V2_DATE_FORMAT=yyyy-MM-dd'T'HH:mm:ss'Z'
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) Doing this will result in a REST API that is OpenAPI compliant, but
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) please remember to upgrade all your client applications first!
+2024-11-20 18:02:24,302 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) ---------------------------------------------------------------------
+2024-11-20 18:02:26,177 WARN  [io.qua.config] (main) Unrecognized configuration file file:/debezium/config/application.properties.example found; Please, check if your are providing the proper extension to load the file
+2024-11-20 18:02:26,178 WARN  [io.qua.config] (main) Unrecognized configuration file file:/debezium/config/application.properties.cassandra.redis.example found; Please, check if your are providing the proper extension to load the file
+2024-11-20 18:02:26,178 WARN  [io.qua.config] (main) Unrecognized configuration file file:/debezium/config/application.yaml.example found; Please, check if your are providing the proper extension to load the file
+2024-11-20 18:02:26,258 INFO  [io.deb.ser.BaseChangeConsumer] (main) Using 'io.debezium.server.BaseChangeConsumer$$Lambda/0x00007f396c4a2e98@468173fa' stream name mapper
+2024-11-20 18:02:26,304 INFO  [org.apa.kaf.cli.pro.ProducerConfig] (main) ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [dbz-kafka-kafka-bootstrap:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-20 18:02:26,336 INFO  [org.apa.kaf.com.tel.int.KafkaMetricsCollector] (main) initializing Kafka metrics collector
+2024-11-20 18:02:26,463 INFO  [org.apa.kaf.cli.pro.KafkaProducer] (main) [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-11-20 18:02:26,518 WARN  [org.apa.kaf.cli.ClientUtils] (main) Couldn't resolve server dbz-kafka-kafka-bootstrap:9092 from bootstrap.servers as DNS resolution failed for dbz-kafka-kafka-bootstrap
+2024-11-20 18:02:26,519 INFO  [org.apa.kaf.cli.pro.KafkaProducer] (main) [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 0 ms.
+2024-11-20 18:02:26,520 INFO  [org.apa.kaf.com.met.Metrics] (main) Metrics scheduler closed
+2024-11-20 18:02:26,521 INFO  [org.apa.kaf.com.met.Metrics] (main) Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2024-11-20 18:02:26,521 INFO  [org.apa.kaf.com.met.Metrics] (main) Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2024-11-20 18:02:26,521 INFO  [org.apa.kaf.com.met.Metrics] (main) Metrics reporters closed
+2024-11-20 18:02:26,523 INFO  [org.apa.kaf.com.uti.AppInfoParser] (main) App info kafka.producer for producer-1 unregistered
+2024-11-20 18:02:26,545 ERROR [io.qua.run.Application] (main) Failed to start application (with profile [prod]): java.lang.RuntimeException: Failed to start quarkus
+	at io.quarkus.runner.ApplicationImpl.doStart(Unknown Source)
+	at io.quarkus.runtime.Application.start(Application.java:101)
+	at io.quarkus.runtime.ApplicationLifecycleManager.run(ApplicationLifecycleManager.java:111)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:71)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:44)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:124)
+	at io.debezium.server.Main.main(Main.java:15)
+Caused by: org.apache.kafka.common.KafkaException: Failed to construct kafka producer
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:476)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:297)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:280)
+	at io.debezium.server.kafka.KafkaChangeConsumer.start(KafkaChangeConsumer.java:74)
+	at io.debezium.server.kafka.KafkaChangeConsumer_Bean.doCreate(Unknown Source)
+	at io.debezium.server.kafka.KafkaChangeConsumer_Bean.create(Unknown Source)
+	at io.debezium.server.kafka.KafkaChangeConsumer_Bean.create(Unknown Source)
+	at io.debezium.server.DebeziumServer.start(DebeziumServer.java:138)
+	at io.debezium.server.DebeziumServer_Bean.doCreate(Unknown Source)
+	at io.debezium.server.DebeziumServer_Bean.create(Unknown Source)
+	at io.debezium.server.DebeziumServer_Bean.create(Unknown Source)
+	at io.quarkus.arc.impl.AbstractSharedContext.createInstanceHandle(AbstractSharedContext.java:119)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:38)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:35)
+	at io.quarkus.arc.generator.Default_jakarta_enterprise_context_ApplicationScoped_ContextInstances.c6(Unknown Source)
+	at io.quarkus.arc.generator.Default_jakarta_enterprise_context_ApplicationScoped_ContextInstances.computeIfAbsent(Unknown Source)
+	at io.quarkus.arc.impl.AbstractSharedContext.get(AbstractSharedContext.java:35)
+	at io.quarkus.arc.impl.ClientProxies.getApplicationScopedDelegate(ClientProxies.java:21)
+	at io.debezium.server.DebeziumServer_ClientProxy.arc$delegate(Unknown Source)
+	at io.debezium.server.DebeziumServer_ClientProxy.arc_contextualInstance(Unknown Source)
+	at io.debezium.server.DebeziumServer_Observer_Synthetic_8opI9r3OQybbRK7JL9tchNU1tdk.notify(Unknown Source)
+	at io.quarkus.arc.impl.EventImpl$Notifier.notifyObservers(EventImpl.java:346)
+	at io.quarkus.arc.impl.EventImpl$Notifier.notify(EventImpl.java:328)
+	at io.quarkus.arc.impl.EventImpl.fire(EventImpl.java:82)
+	at io.quarkus.arc.runtime.ArcRecorder.fireLifecycleEvent(ArcRecorder.java:155)
+	at io.quarkus.arc.runtime.ArcRecorder.handleLifecycleEvents(ArcRecorder.java:106)
+	at io.quarkus.deployment.steps.LifecycleEventsBuildStep$startupEvent1144526294.deploy_0(Unknown Source)
+	at io.quarkus.deployment.steps.LifecycleEventsBuildStep$startupEvent1144526294.deploy(Unknown Source)
+	... 7 more
+Caused by: org.apache.kafka.common.config.ConfigException: No resolvable bootstrap urls given in bootstrap.servers
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:104)
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:63)
+	at org.apache.kafka.clients.ClientUtils.parseAndValidateAddresses(ClientUtils.java:59)
+	at org.apache.kafka.clients.producer.KafkaProducer.<init>(KafkaProducer.java:451)
+	... 34 more
+
