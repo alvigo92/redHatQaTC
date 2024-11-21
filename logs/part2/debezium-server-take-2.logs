@@ -1,0 +1,393 @@
+       __       __                 _                 
+  ____/ /___   / /_   ___  ____   (_)__  __ ____ ___ 
+ / __  // _ \ / __ \ / _ \/_  /  / // / / // __ `__ \
+/ /_/ //  __// /_/ //  __/ / /_ / // /_/ // / / / / /
+\__,_/ \___//_.___/ \___/ /___//_/ \__,_//_/ /_/ /_/ 
+                                                     
+
+
+                             Powered by Quarkus 3.8.5
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) ---------------------------------------------------------------------
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) Legacy REST API date formats enabled (this is currently the default).
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) For maximum compatibility and to ease upgrades from older versions
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) of Registry, the date format used in the REST API is not compliant
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) with OpenAPI standards (due to a bug in older versions).  Please
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) make sure you upgrade all of your client applications to use the
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) latest client version.  The next release will fix the date format
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) bug, which will result in older clients no longer being compatible
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) with the REST API.
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) If you would like to fix the date format bug in THIS version of
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) Registry (great!) please set the following ENV variable + value:
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) REGISTRY_APIS_V2_DATE_FORMAT=yyyy-MM-dd'T'HH:mm:ss'Z'
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) 
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) Doing this will result in a REST API that is OpenAPI compliant, but
+2024-11-21 18:05:56,798 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) please remember to upgrade all your client applications first!
+2024-11-21 18:05:56,799 INFO  [io.api.reg.res.JacksonDateTimeCustomizer] (main) ---------------------------------------------------------------------
+2024-11-21 18:05:59,008 WARN  [io.qua.config] (main) Unrecognized configuration file file:/debezium/config/application.properties.example found; Please, check if your are providing the proper extension to load the file
+2024-11-21 18:05:59,008 WARN  [io.qua.config] (main) Unrecognized configuration file file:/debezium/config/application.properties.cassandra.redis.example found; Please, check if your are providing the proper extension to load the file
+2024-11-21 18:05:59,008 WARN  [io.qua.config] (main) Unrecognized configuration file file:/debezium/config/application.yaml.example found; Please, check if your are providing the proper extension to load the file
+2024-11-21 18:05:59,105 INFO  [io.deb.ser.BaseChangeConsumer] (main) Using 'io.debezium.server.BaseChangeConsumer$$Lambda/0x00007fd07c4cb9f0@4978777f' stream name mapper
+2024-11-21 18:05:59,128 INFO  [org.apa.kaf.cli.pro.ProducerConfig] (main) ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [dbz-kafka-kafka-bootstrap:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2024-11-21 18:05:59,183 INFO  [org.apa.kaf.com.tel.int.KafkaMetricsCollector] (main) initializing Kafka metrics collector
+2024-11-21 18:05:59,373 INFO  [org.apa.kaf.cli.pro.KafkaProducer] (main) [Producer clientId=producer-1] Instantiated an idempotent producer.
+2024-11-21 18:05:59,458 INFO  [org.apa.kaf.com.uti.AppInfoParser] (main) Kafka version: 3.9.0
+2024-11-21 18:05:59,458 INFO  [org.apa.kaf.com.uti.AppInfoParser] (main) Kafka commitId: 84caaa6e9da06435
+2024-11-21 18:05:59,458 INFO  [org.apa.kaf.com.uti.AppInfoParser] (main) Kafka startTimeMs: 1732212359433
+2024-11-21 18:05:59,460 INFO  [io.deb.ser.kaf.KafkaChangeConsumer] (main) consumer started...
+2024-11-21 18:05:59,461 INFO  [io.deb.ser.DebeziumServer] (main) Consumer 'io.debezium.server.kafka.KafkaChangeConsumer' instantiated
+2024-11-21 18:05:59,659 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (main) JsonConverterConfig values: 
+	converter.type = header
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2024-11-21 18:05:59,663 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (main) JsonConverterConfig values: 
+	converter.type = key
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2024-11-21 18:05:59,663 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (main) JsonConverterConfig values: 
+	converter.type = value
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schemas.cache.size = 1000
+	schemas.enable = true
+
+2024-11-21 18:05:59,696 INFO  [io.deb.emb.EmbeddedWorkerConfig] (main) EmbeddedWorkerConfig values: 
+	access.control.allow.methods = 
+	access.control.allow.origin = 
+	admin.listeners = null
+	auto.include.jmx.reporter = true
+	bootstrap.servers = [localhost:9092]
+	client.dns.lookup = use_all_dns_ips
+	config.providers = []
+	connector.client.config.override.policy = All
+	header.converter = class org.apache.kafka.connect.storage.SimpleHeaderConverter
+	key.converter = class org.apache.kafka.connect.json.JsonConverter
+	listeners = [http://:8083]
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	offset.flush.interval.ms = 60000
+	offset.flush.timeout.ms = 5000
+	offset.storage.file.filename = 
+	offset.storage.partitions = null
+	offset.storage.replication.factor = null
+	offset.storage.topic = 
+	plugin.discovery = hybrid_warn
+	plugin.path = null
+	response.http.headers.config = 
+	rest.advertised.host.name = null
+	rest.advertised.listener = null
+	rest.advertised.port = null
+	rest.extension.classes = []
+	ssl.cipher.suites = null
+	ssl.client.auth = none
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	task.shutdown.graceful.timeout.ms = 5000
+	topic.creation.enable = true
+	topic.tracking.allow.reset = true
+	topic.tracking.enable = true
+	value.converter = class org.apache.kafka.connect.json.JsonConverter
+
+2024-11-21 18:05:59,763 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (main) JsonConverterConfig values: 
+	converter.type = key
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+2024-11-21 18:05:59,763 INFO  [org.apa.kaf.con.jso.JsonConverterConfig] (main) JsonConverterConfig values: 
+	converter.type = value
+	decimal.format = BASE64
+	replace.null.with.default = true
+	schemas.cache.size = 1000
+	schemas.enable = false
+
+2024-11-21 18:05:59,764 INFO  [io.deb.ser.DebeziumServer] (main) Engine executor started
+2024-11-21 18:05:59,764 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) Engine state has changed from 'CREATING' to 'INITIALIZING'
+2024-11-21 18:05:59,868 INFO  [io.quarkus] (main) debezium-server-dist 3.0.3-SNAPSHOT on JVM (powered by Quarkus 3.8.5) started in 4.292s. Listening on: http://0.0.0.0:8080
+2024-11-21 18:05:59,869 INFO  [io.quarkus] (main) Profile prod activated. 
+2024-11-21 18:05:59,870 INFO  [io.quarkus] (main) Installed features: [cdi, config-yaml, kubernetes-client, resteasy, resteasy-jackson, smallrye-context-propagation, smallrye-health, vertx]
+2024-11-21 18:05:59,880 INFO  [io.deb.con.CommonConnectorConfig] (pool-8-thread-1) Loading the custom source info struct maker plugin: io.debezium.connector.postgresql.PostgresSourceInfoStructMaker
+2024-11-21 18:06:00,260 INFO  [io.deb.con.pos.PostgresConnector] (pool-8-thread-1) Successfully tested connection for jdbc:postgresql://postgresql:5432/debezium with user 'debezium'
+2024-11-21 18:06:00,284 INFO  [io.deb.jdb.JdbcConnection] (pool-11-thread-1) Connection gracefully closed
+2024-11-21 18:06:00,364 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) Engine state has changed from 'INITIALIZING' to 'CREATING_TASKS'
+2024-11-21 18:06:00,383 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) Engine state has changed from 'CREATING_TASKS' to 'STARTING_TASKS'
+2024-11-21 18:06:00,384 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) Waiting max. for 180000 ms for individual source tasks to start.
+2024-11-21 18:06:00,387 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1) Starting PostgresConnectorTask with configuration:
+2024-11-21 18:06:00,387 INFO  [org.apa.kaf.cli.Metadata] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] Cluster ID: Ov7dbYuGQxOeUFx4CSL7uQ
+2024-11-21 18:06:00,388 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    connector.class = io.debezium.connector.postgresql.PostgresConnector
+2024-11-21 18:06:00,389 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    record.processing.shutdown.timeout.ms = 1000
+2024-11-21 18:06:00,389 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    schema.include.list = inventory
+2024-11-21 18:06:00,389 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    header.converter.header = json
+2024-11-21 18:06:00,389 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    schema.history.internal.kafka.producer.key.serializer = org.apache.kafka.common.serialization.StringSerializer
+2024-11-21 18:06:00,389 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    record.processing.order = ORDERED
+2024-11-21 18:06:00,390 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    topic.prefix = inventory
+2024-11-21 18:06:00,390 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.storage.file.filename = 
+2024-11-21 18:06:00,390 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    record.processing.threads = 
+2024-11-21 18:06:00,390 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    errors.retry.delay.initial.ms = 300
+2024-11-21 18:06:00,390 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    value.converter = org.apache.kafka.connect.json.JsonConverter
+2024-11-21 18:06:00,391 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.storage.kafka.producer.value.serializer = org.apache.kafka.common.serialization.StringSerializer
+2024-11-21 18:06:00,391 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    key.converter = org.apache.kafka.connect.json.JsonConverter
+2024-11-21 18:06:00,391 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    schema.history.internal.kafka.producer.bootstrap.servers = dbz-kafka-kafka-bootstrap:9092
+2024-11-21 18:06:00,391 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    header.converter.value = json
+2024-11-21 18:06:00,391 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    database.user = debezium
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    database.dbname = debezium
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.storage = org.apache.kafka.connect.storage.MemoryOffsetBackingStore
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    header.converter.key = json
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    key.converter.value = json
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    value.converter.header = json
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    key.converter.header = json
+2024-11-21 18:06:00,392 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.flush.timeout.ms = 5000
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    errors.retry.delay.max.ms = 10000
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    schema.history.internal.kafka.producer.value.serializer = org.apache.kafka.common.serialization.StringSerializer
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    value.converter.value = json
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    database.port = 5432
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.flush.interval.ms = 60000
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.storage.kafka.producer.bootstrap.servers = dbz-kafka-kafka-bootstrap:9092
+2024-11-21 18:06:00,393 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    internal.task.management.timeout.ms = 180000
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    schema.history.internal = io.debezium.relational.history.MemorySchemaHistory
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    record.processing.with.serial.consumer = false
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    errors.max.retries = -1
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    database.hostname = postgresql
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    database.password = ********
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    name = kafka
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    value.converter.key = json
+2024-11-21 18:06:00,394 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    offset.storage.kafka.producer.key.serializer = org.apache.kafka.common.serialization.StringSerializer
+2024-11-21 18:06:00,395 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1)    key.converter.key = json
+2024-11-21 18:06:00,395 INFO  [io.deb.con.CommonConnectorConfig] (pool-9-thread-1) Loading the custom source info struct maker plugin: io.debezium.connector.postgresql.PostgresSourceInfoStructMaker
+2024-11-21 18:06:00,399 INFO  [io.deb.con.CommonConnectorConfig] (pool-9-thread-1) Loading the custom topic naming strategy plugin: io.debezium.schema.SchemaTopicNamingStrategy
+2024-11-21 18:06:00,497 INFO  [io.deb.jdb.JdbcConnection] (pool-12-thread-1) Connection gracefully closed
+2024-11-21 18:06:00,676 INFO  [org.apa.kaf.cli.pro.int.TransactionManager] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] ProducerId set to 0 with epoch 0
+2024-11-21 18:06:00,681 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13529, name:_pg_user_mappings] is already mapped
+2024-11-21 18:06:00,682 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13203, name:cardinal_number] is already mapped
+2024-11-21 18:06:00,682 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13206, name:character_data] is already mapped
+2024-11-21 18:06:00,682 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13208, name:sql_identifier] is already mapped
+2024-11-21 18:06:00,682 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13214, name:time_stamp] is already mapped
+2024-11-21 18:06:00,682 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13216, name:yes_or_no] is already mapped
+2024-11-21 18:06:00,790 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1) No previous offsets found
+2024-11-21 18:06:00,882 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13529, name:_pg_user_mappings] is already mapped
+2024-11-21 18:06:00,883 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13203, name:cardinal_number] is already mapped
+2024-11-21 18:06:00,883 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13206, name:character_data] is already mapped
+2024-11-21 18:06:00,883 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13208, name:sql_identifier] is already mapped
+2024-11-21 18:06:00,884 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13214, name:time_stamp] is already mapped
+2024-11-21 18:06:00,884 WARN  [io.deb.con.pos.TypeRegistry] (pool-9-thread-1) Type [oid:13216, name:yes_or_no] is already mapped
+2024-11-21 18:06:00,979 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1) Connector started for the first time.
+2024-11-21 18:06:00,980 INFO  [io.deb.con.pos.PostgresConnectorTask] (pool-9-thread-1) No previous offset found
+2024-11-21 18:06:00,985 INFO  [io.deb.con.pos.PostgresConnectorTask] (pool-9-thread-1) user 'debezium' connected to database 'debezium' on PostgreSQL 16.5 (Debian 16.5-1.pgdg110+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit with roles:
+	role 'pg_read_all_settings' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_database_owner' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_stat_scan_tables' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_checkpoint' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_write_server_files' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'debezium' [superuser: true, replication: true, inherit: true, create role: true, create db: true, can log in: true]
+	role 'pg_use_reserved_connections' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_read_all_data' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_write_all_data' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_monitor' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_read_server_files' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_create_subscription' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_execute_server_program' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_read_all_stats' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+	role 'pg_signal_backend' [superuser: false, replication: false, inherit: true, create role: false, create db: false, can log in: false]
+2024-11-21 18:06:00,994 INFO  [io.deb.con.pos.con.PostgresConnection] (pool-9-thread-1) Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=null, catalogXmin=null]
+2024-11-21 18:06:01,014 INFO  [io.deb.con.pos.con.PostgresReplicationConnection] (pool-9-thread-1) Creating replication slot with command CREATE_REPLICATION_SLOT "debezium"  LOGICAL decoderbufs
+2024-11-21 18:06:01,073 INFO  [io.deb.uti.Threads] (pool-9-thread-1) Requested thread factory for component PostgresConnector, id = inventory named = SignalProcessor
+2024-11-21 18:06:01,095 INFO  [io.deb.uti.Threads] (pool-9-thread-1) Requested thread factory for component PostgresConnector, id = inventory named = change-event-source-coordinator
+2024-11-21 18:06:01,096 INFO  [io.deb.uti.Threads] (pool-9-thread-1) Requested thread factory for component PostgresConnector, id = inventory named = blocking-snapshot
+2024-11-21 18:06:01,104 INFO  [io.deb.uti.Threads] (pool-9-thread-1) Creating thread debezium-postgresconnector-inventory-change-event-source-coordinator
+2024-11-21 18:06:01,105 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) All tasks have started successfully.
+2024-11-21 18:06:01,105 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) Engine state has changed from 'STARTING_TASKS' to 'POLLING_TASKS'
+2024-11-21 18:06:01,107 INFO  [io.deb.emb.asy.AsyncEmbeddedEngine] (pool-8-thread-1) Using io.debezium.embedded.async.ParallelSmtAndConvertBatchProcessor processor
+2024-11-21 18:06:01,109 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-inventory-change-event-source-coordinator) Metrics registered
+2024-11-21 18:06:01,110 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-inventory-change-event-source-coordinator) Context created
+2024-11-21 18:06:01,116 INFO  [io.deb.con.pos.PostgresSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) According to the connector configuration data will be snapshotted
+2024-11-21 18:06:01,120 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 1 - Preparing
+2024-11-21 18:06:01,121 INFO  [io.deb.con.pos.PostgresSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Setting isolation level
+2024-11-21 18:06:01,121 INFO  [io.deb.con.pos.PostgresSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Opening transaction with statement SET TRANSACTION ISOLATION LEVEL REPEATABLE READ; 
+SET TRANSACTION SNAPSHOT '00000005-00000002-1';
+2024-11-21 18:06:01,268 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 2 - Determining captured tables
+2024-11-21 18:06:01,272 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Adding table inventory.geom to the list of capture schema tables
+2024-11-21 18:06:01,272 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Adding table inventory.products_on_hand to the list of capture schema tables
+2024-11-21 18:06:01,272 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Adding table inventory.customers to the list of capture schema tables
+2024-11-21 18:06:01,273 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Adding table inventory.orders to the list of capture schema tables
+2024-11-21 18:06:01,273 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Adding table inventory.products to the list of capture schema tables
+2024-11-21 18:06:01,276 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Created connection pool with 1 threads
+2024-11-21 18:06:01,276 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 3 - Locking captured tables [inventory.customers, inventory.geom, inventory.orders, inventory.products, inventory.products_on_hand]
+2024-11-21 18:06:01,283 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 4 - Determining snapshot offset
+2024-11-21 18:06:01,299 INFO  [io.deb.con.pos.PostgresOffsetContext] (debezium-postgresconnector-inventory-change-event-source-coordinator) Creating initial offset context
+2024-11-21 18:06:01,361 INFO  [io.deb.con.pos.PostgresOffsetContext] (debezium-postgresconnector-inventory-change-event-source-coordinator) Read xlogStart at 'LSN{0/2422390}' from transaction '773'
+2024-11-21 18:06:01,367 INFO  [io.deb.con.pos.PostgresSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Read xlogStart at 'LSN{0/2422390}' from transaction '773'
+2024-11-21 18:06:01,368 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 5 - Reading structure of captured tables
+2024-11-21 18:06:01,369 INFO  [io.deb.con.pos.PostgresSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Reading structure of schema 'inventory' of catalog 'debezium'
+2024-11-21 18:06:01,568 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 6 - Persisting schema history
+2024-11-21 18:06:01,568 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot step 7 - Snapshotting data
+2024-11-21 18:06:01,570 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Creating snapshot worker pool with 1 worker thread(s)
+2024-11-21 18:06:01,572 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) For table 'inventory.customers' using select statement: 'SELECT "id", "first_name", "last_name", "email" FROM "inventory"."customers"'
+2024-11-21 18:06:01,572 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) For table 'inventory.geom' using select statement: 'SELECT "id", "g", "h" FROM "inventory"."geom"'
+2024-11-21 18:06:01,573 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) For table 'inventory.orders' using select statement: 'SELECT "id", "order_date", "purchaser", "quantity", "product_id" FROM "inventory"."orders"'
+2024-11-21 18:06:01,573 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) For table 'inventory.products' using select statement: 'SELECT "id", "name", "description", "weight" FROM "inventory"."products"'
+2024-11-21 18:06:01,573 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) For table 'inventory.products_on_hand' using select statement: 'SELECT "product_id", "quantity" FROM "inventory"."products_on_hand"'
+2024-11-21 18:06:01,577 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) Exporting data from table 'inventory.customers' (1 of 5 tables)
+2024-11-21 18:06:01,599 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) 	 Finished exporting 4 records for table 'inventory.customers' (1 of 5 tables); total duration '00:00:00.022'
+2024-11-21 18:06:01,600 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) Exporting data from table 'inventory.geom' (2 of 5 tables)
+2024-11-21 18:06:01,618 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) 	 Finished exporting 3 records for table 'inventory.geom' (2 of 5 tables); total duration '00:00:00.018'
+2024-11-21 18:06:01,618 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) Exporting data from table 'inventory.orders' (3 of 5 tables)
+2024-11-21 18:06:01,627 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) 	 Finished exporting 4 records for table 'inventory.orders' (3 of 5 tables); total duration '00:00:00.009'
+2024-11-21 18:06:01,627 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) Exporting data from table 'inventory.products' (4 of 5 tables)
+2024-11-21 18:06:01,666 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) 	 Finished exporting 9 records for table 'inventory.products' (4 of 5 tables); total duration '00:00:00.039'
+2024-11-21 18:06:01,666 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) Exporting data from table 'inventory.products_on_hand' (5 of 5 tables)
+2024-11-21 18:06:01,676 INFO  [io.deb.rel.RelationalSnapshotChangeEventSource] (pool-13-thread-1) 	 Finished exporting 9 records for table 'inventory.products_on_hand' (5 of 5 tables); total duration '00:00:00.01'
+2024-11-21 18:06:01,678 INFO  [io.deb.pip.sou.AbstractSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot - Final stage
+2024-11-21 18:06:01,679 INFO  [io.deb.pip.sou.AbstractSnapshotChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot completed
+2024-11-21 18:06:01,761 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-inventory-change-event-source-coordinator) Snapshot ended with SnapshotResult [status=COMPLETED, offset=PostgresOffsetContext [sourceInfoSchema=Schema{io.debezium.connector.postgresql.Source:STRUCT}, sourceInfo=source_info[server='inventory'db='debezium', lsn=LSN{0/2422390}, txId=773, timestamp=2024-11-21T18:06:01.123365Z, snapshot=FALSE, schema=inventory, table=products_on_hand], lastSnapshotRecord=true, lastCompletelyProcessedLsn=null, lastCommitLsn=null, streamingStoppingLsn=null, transactionContext=TransactionContext [currentTransactionId=null, perTableEventCount={}, totalEventCount=0], incrementalSnapshotContext=IncrementalSnapshotContext [windowOpened=false, chunkEndPosition=null, dataCollectionsToSnapshot=[], lastEventKeySent=null, maximumKey=null]]]
+2024-11-21 18:06:01,764 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-inventory-change-event-source-coordinator) Connected metrics set to 'true'
+2024-11-21 18:06:01,785 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 9 : {inventory.inventory.customers=LEADER_NOT_AVAILABLE}
+2024-11-21 18:06:01,861 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.geom' is 'DEFAULT'; UPDATE and DELETE events will contain previous values only for PK columns
+2024-11-21 18:06:01,863 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.products_on_hand' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:01,865 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.customers' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:01,866 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.orders' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:01,867 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.products' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:01,889 INFO  [io.deb.pip.sig.SignalProcessor] (debezium-postgresconnector-inventory-change-event-source-coordinator) SignalProcessor started. Scheduling it every 5000ms
+2024-11-21 18:06:01,890 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-inventory-change-event-source-coordinator) Creating thread debezium-postgresconnector-inventory-SignalProcessor
+2024-11-21 18:06:01,891 INFO  [io.deb.pip.ChangeEventSourceCoordinator] (debezium-postgresconnector-inventory-change-event-source-coordinator) Starting streaming
+2024-11-21 18:06:01,893 INFO  [io.deb.con.pos.PostgresStreamingChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Retrieved latest position from stored offset 'LSN{0/2422390}'
+2024-11-21 18:06:01,895 INFO  [io.deb.con.pos.con.WalPositionLocator] (debezium-postgresconnector-inventory-change-event-source-coordinator) Looking for WAL restart position for last commit LSN 'null' and last change LSN 'LSN{0/2422390}'
+2024-11-21 18:06:01,972 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 10 : {inventory.inventory.customers=LEADER_NOT_AVAILABLE}
+2024-11-21 18:06:01,978 INFO  [io.deb.con.pos.con.PostgresConnection] (debezium-postgresconnector-inventory-change-event-source-coordinator) Obtained valid replication slot ReplicationSlot [active=false, latestFlushedLsn=LSN{0/2422390}, catalogXmin=773]
+2024-11-21 18:06:01,980 INFO  [io.deb.jdb.JdbcConnection] (pool-14-thread-1) Connection gracefully closed
+2024-11-21 18:06:02,059 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-inventory-change-event-source-coordinator) Requested thread factory for component PostgresConnector, id = inventory named = keep-alive
+2024-11-21 18:06:02,060 INFO  [io.deb.uti.Threads] (debezium-postgresconnector-inventory-change-event-source-coordinator) Creating thread debezium-postgresconnector-inventory-keep-alive
+2024-11-21 18:06:02,173 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.geom' is 'DEFAULT'; UPDATE and DELETE events will contain previous values only for PK columns
+2024-11-21 18:06:02,174 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.products_on_hand' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:02,175 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.customers' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:02,176 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.orders' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:02,176 INFO  [io.deb.con.pos.PostgresSchema] (debezium-postgresconnector-inventory-change-event-source-coordinator) REPLICA IDENTITY for 'inventory.products' is 'FULL'; UPDATE AND DELETE events will contain the previous values of all the columns
+2024-11-21 18:06:02,186 INFO  [io.deb.con.pos.PostgresStreamingChangeEventSource] (debezium-postgresconnector-inventory-change-event-source-coordinator) Processing messages
+2024-11-21 18:06:02,275 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 11 : {inventory.inventory.customers=LEADER_NOT_AVAILABLE}
+2024-11-21 18:06:02,797 INFO  [io.deb.con.com.BaseSourceTask] (pool-9-thread-1) Found previous partition offset PostgresPartition [sourcePartition={server=inventory}]: {last_snapshot_record=false, lsn=37888912, txId=773, ts_usec=1732212361123365, snapshot=INITIAL, snapshot_completed=false}
+2024-11-21 18:06:03,348 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 14 : {inventory.inventory.geom=LEADER_NOT_AVAILABLE}
+2024-11-21 18:06:03,489 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 18 : {inventory.inventory.orders=LEADER_NOT_AVAILABLE}
+2024-11-21 18:06:03,627 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 22 : {inventory.inventory.products=LEADER_NOT_AVAILABLE}
+2024-11-21 18:06:03,785 WARN  [org.apa.kaf.cli.NetworkClient] (kafka-producer-network-thread | producer-1) [Producer clientId=producer-1] The metadata response from the cluster reported a recoverable issue with correlation id 25 : {inventory.inventory.products_on_hand=LEADER_NOT_AVAILABLE}

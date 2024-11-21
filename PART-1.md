@@ -55,10 +55,14 @@ In this case, we are changing the directory to the mentioned module. Then we run
 
 ## OracleRowIdDataTypeIT for debezium-connector-oracle module and LogMiner adapter
 
-Stepping a bit deeper, this new scenario includes the option to run the command (more or less the same as above) but with a specific profile. In this case we are running the command with the profile called `oracle-tests` which will run the integrations tests for the connector and the logMiner adapter. 
+Stepping a bit deeper, this new scenario includes the option to run the command (more or less the same as above) but with a specific profile. In this case we are running the command with the profiles called `oracle-tests` and `oracle-docker` which will run the integrations tests for the connector and the logMiner adapter, creating the oracle container with the needed configuration. 
 
 ```bash
-cd debezium-connector-oracle; mvn clean verify -Dit.test=OracleRowIdDataTypeIT -DskipTest -P oracle-tests | tee OracleRowIdDataTypeIT.log
+cd debezium-connector-oracle; mvn clean verify -Dit.test=OracleRowIdDataTypeIT -DskipTest -P oracle-tests,oracle-docker | tee OracleRowIdDataTypeIT.log
 ```
 
 In the same way as previous scenarios, the logs can be found [here](./logs/part1/OracleRowIdDataTypeIT.log). In this case we change the directory to the specified module. Then we run the mentioned integration test case, skipping unit test to make it faster. And last option, the profile. This profile has been selected based on [this profile](https://github.com/debezium/debezium/blob/572675acb6c738b955bff991ffc298a708f44bae/debezium-connector-oracle/pom.xml#L360) defined in the module's pom given in the statement. 
+
+### Note
+
+As mentioned in previous emails, there is a problem downloading the image `quay.io/rh_integration/dbz-oracle:19.3.0`, that seems to be non public and therefore the test cannot complete with success. 
